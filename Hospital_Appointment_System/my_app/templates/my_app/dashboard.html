@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+        .btn-add { background-color: #28a745; }
+        .btn-edit { background-color: #ffc107; }
+        .btn-delete { background-color: #dc3545; }
+        .btn-logout { background-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome, {{ user.username }}!</h1>
+        <div>
+            <a href="{% url 'appointment_create' %}" class="btn btn-add">Add Appointment</a>
+        </div>
+    </div>
+
+    <p>Number of the appointment: {{ appointments|length }}</p>
+
+    {% if appointments %}
+        <table>
+            <tr>
+                <th>Doctor</th>
+                <th>Date & Time</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            {% for app in appointments %}
+            <tr>
+                <td>{{ app.doctor.full_name }}</td>
+                <td>{{ app.appointment_datetime|date:"Y-m-d H:i" }}</td>
+                <td>{{ app.description }}</td>
+                <td>
+                    <a href="{% url 'appointment_update' app.id %}" class="btn btn-edit">Edit</a> 
+                    <a href="{% url 'appointment_delete' app.id %}" class="btn btn-delete">Delete</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No appointments yet.</p>
+    {% endif %}
+</body>
+</html>

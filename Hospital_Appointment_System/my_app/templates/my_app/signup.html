@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - Hospital Appointment System</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+</head>
+<body>
+<div class="login-container">
+    <h1>Sign Up</h1>
+    {% if error_message %}
+      <div style="color:red; text-align:center;">{{ error_message }}</div>
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn submit">Sign Up</button>
+    </form>
+    <div class="signup-link">
+        <p>Already have an account? <a href="{% url 'home' %}">Login here</a></p>
+    </div>
+</div>
+</body>
+</html>
