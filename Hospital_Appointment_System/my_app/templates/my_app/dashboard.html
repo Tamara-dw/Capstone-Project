@@ -10,11 +10,30 @@
             padding: 20px;
         }
 
-        .header {
+        /* Navbar */
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
         }
+
+        .navbar a, .navbar button {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-add { background-color: #28a745; }
+        .btn-doctors { background-color: #17a2b8; }
+        .btn-logout { background-color: #dc3545; }
 
         table {
             width: 100%;
@@ -33,35 +52,25 @@
             color: white;
         }
 
-        .btn {
-            padding: 5px 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-            margin-left: 5px;
-        }
-
-        .btn-add { background-color: #28a745; }
         .btn-edit { background-color: #ffc107; }
         .btn-delete { background-color: #dc3545; }
-        .btn-logout { background-color: #dc3545; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Welcome, {{ user.username }}!</h1>
+    <!-- Navbar -->
+    <div class="navbar">
+        <span>Welcome, {{ user.username }}!</span>
         <div>
             <a href="{% url 'appointment_create' %}" class="btn btn-add">Add Appointment</a>
+            <a href="{% url 'doctor_list' %}" class="btn btn-doctors">Doctors</a>
             <form id="logout-form" method="post" action="{% url 'logout' %}" style="display:inline;">
                 {% csrf_token %}
-                 <button type="submit" class="btn btn-logout">Logout</button>
-             </form>
+                <button type="submit" class="btn btn-logout">Logout</button>
+            </form>
         </div>
     </div>
 
-    <p>Number of the appointment: {{ appointments|length }}</p>
+    <p>Number of appointments: {{ appointments|length }}</p>
 
     {% if appointments %}
         <table>

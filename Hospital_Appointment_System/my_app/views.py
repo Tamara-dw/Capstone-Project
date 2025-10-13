@@ -4,7 +4,7 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView
-from .models import Appointment
+from .models import Appointment,Doctor
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView, UpdateView, DeleteView ,ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -76,15 +76,7 @@ class AppointmentDelete(LoginRequiredMixin, DeleteView):
 
 
 
-# '''   
-# # Update Appointment
-# class AppointmentUpdate(LoginRequiredMixin, UpdateView):
-#     model = Appointment
-#     fields = ['doctor', 'patient', 'appointment_datetime', 'description']
-#     success_url = reverse_lazy('dashboard')
-
-# # Delete Appointment
-# class AppointmentDelete(LoginRequiredMixin, DeleteView):
-#     model = Appointment
-#     success_url = reverse_lazy('dashboard')
-# '''
+class DoctorListView(ListView):
+    model = Doctor
+    template_name = 'my_app/doctor_list.html'
+    context_object_name = 'doctors'
