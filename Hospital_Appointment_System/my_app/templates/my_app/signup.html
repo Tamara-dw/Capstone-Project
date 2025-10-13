@@ -4,13 +4,13 @@
 <html>
 <head>
     <title>Sign Up - Hospital Appointment System</title>
-    <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+
 </head>
 <body>
 <div class="login-container">
     <h1>Sign Up</h1>
     {% if error_message %}
-      <div style="color:red; text-align:center;">{{ error_message }}</div>
+      <div>{{ error_message }}</div>
     {% endif %}
     <form action="" method="post">
         {% csrf_token %}
