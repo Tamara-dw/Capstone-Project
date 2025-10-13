@@ -4,54 +4,8 @@
 <html>
 <head>
     <title>{% if object %}Edit Appointment{% else %}Add Appointment{% endif %}</title>
-    <link rel="stylesheet" href="{% static 'css/form.css' %}">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
+    <link rel="stylesheet" href="{% static 'css/appointment_form.css' %}">
 
-        .page-header h1 {
-            color: #007BFF;
-            margin-bottom: 20px;
-        }
-
-        .form-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 500px;
-        }
-
-        .form-container table {
-            width: 100%;
-        }
-
-        .form-container input, 
-        .form-container select, 
-        .form-container textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0 15px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .btn {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-            color: white;
-            margin-right: 5px;
-        }
-
-        .btn-submit { background-color: #28a745; }
-        .btn-cancel { background-color: #dc3545; }
-    </style>
 </head>
 <body>
     <div class="page-header">
