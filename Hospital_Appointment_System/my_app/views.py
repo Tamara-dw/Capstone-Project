@@ -14,6 +14,9 @@ from .forms import AppointmentForm
 class Home(LoginView):
     template_name = 'my_app/home.html'
 
+def about(request):
+    return render(request, 'my_app/about.html')
+
 # Sign up view
 def signup(request):
     error_message = ''
