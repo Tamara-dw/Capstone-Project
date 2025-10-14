@@ -38,7 +38,7 @@ class DashboardView(LoginRequiredMixin, ListView):
     context_object_name = 'appointments'
 
     def get_queryset(self):
-        return Appointment.objects.filter(patient=self.request.user)
+        return Appointment.objects.filter(patient=self.request.user).order_by('appointment_datetime')
 
 
     
@@ -47,7 +47,6 @@ class AppointmentCreate(LoginRequiredMixin, CreateView):
     form_class = AppointmentForm  # الفورم للموعد
 
     def form_valid(self, form):
-        # ربط المريض الحالي مباشرة بالمستخدم
         form.instance.patient = self.request.user
         return super().form_valid(form)
 

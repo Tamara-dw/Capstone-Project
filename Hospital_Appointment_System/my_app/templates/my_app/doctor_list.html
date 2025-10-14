@@ -17,6 +17,8 @@
         h1 {
             color: #007BFF;
             margin-bottom: 30px;
+            font-size: 28px;
+
         }
 
         .doctors-container {
@@ -77,6 +79,53 @@
         .back-link:hover {
             background-color: #0056b3;
         }
+        @media (max-width: 768px) {
+         h1 {
+            font-size: 24px;
+         }
+
+         .doctor-card {
+            width: 45%;
+            padding: 15px;
+         }
+
+         .doctor-name {
+            font-size: 16px;
+         }
+
+         .doctor-details {
+            font-size: 14px;
+         }
+
+         .back-link {
+            padding: 8px 16px;
+            font-size: 14px;
+         }
+        }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 20px;
+        }
+
+        .doctor-card {
+            width: 90%;
+            padding: 12px;
+        }
+
+        .doctor-name {
+            font-size: 15px;
+        }
+
+        .doctor-details {
+            font-size: 13px;
+        }
+
+        .back-link {
+            padding: 6px 12px;
+            font-size: 13px;
+        }
+    }
     </style>
 </head>
 <body>

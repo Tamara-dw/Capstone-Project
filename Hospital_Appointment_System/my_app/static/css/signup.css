@@ -95,3 +95,51 @@
             margin-bottom: 10px;
             font-weight: bold;
         }
+ @media (max-width: 768px) {
+    .login-container {
+        padding: 30px 25px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    form p {
+        font-size: 14px;
+    }
+
+    input, select {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .btn.submit {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .signup-link {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    input, select {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .btn.submit {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .signup-link {
+        font-size: 12px;
+    }        
+}

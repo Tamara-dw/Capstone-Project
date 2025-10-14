@@ -85,4 +85,51 @@
             color: #0056b3;
             text-decoration: underline;
         }
-    
+        @media (max-width: 768px) {
+           .login-container {
+           width: 90%;
+           padding: 30px 25px;
+            }
+
+         h1 {
+          font-size: 24px;
+         }
+
+         form input[type="text"],
+         form input[type="password"],
+         form input[type="email"] {
+           font-size: 15px;
+           padding: 10px 12px;
+          }
+
+         .btn.submit {
+           font-size: 16px;
+           padding: 10px 0;
+         }
+
+         .signup-link {
+           font-size: 13px;
+           }
+        }
+
+        @media (max-width: 480px) {
+          h1 {
+           font-size: 20px;
+             }
+
+           form input[type="text"],
+           form input[type="password"],
+           form input[type="email"] {
+             font-size: 14px;
+             padding: 8px 10px;
+                 }
+
+           .btn.submit {
+              font-size: 15px;
+             padding: 8px 0;
+              }
+
+            .signup-link {
+                 font-size: 12px;
+               }
+        }
