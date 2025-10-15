@@ -15,13 +15,13 @@ To explore the Hospital Appointment App:
 
 # Installation & Setup
 
- # Clone the Repository
+  Clone the Repository
 
   git clone https://github.com/Tamara-dw/Capstone-Project.git
   cd Capstone-Project
 
 
- # Create & Activate Virtual Environment
+  Create & Activate Virtual Environment
 
   python -m venv venv
   #Windows:
@@ -30,19 +30,19 @@ To explore the Hospital Appointment App:
   source venv/bin/activate
 
 
- # Install Dependencies
+  Install Dependencies
 
   pip install -r requirements.txt
 
 
- # Setup PostgreSQL Database
+  Setup PostgreSQL Database
 
   CREATE DATABASE hospital_db;
   CREATE USER hospital_user WITH PASSWORD 'yourpassword';
   GRANT ALL PRIVILEGES ON DATABASE hospital_db TO hospital_user;
 
 
- # Update settings.py
+  Update settings.py
 
    DATABASES = {
     'default': {
@@ -56,23 +56,23 @@ To explore the Hospital Appointment App:
    }
 
 
- # Apply Migrations
+  Apply Migrations
 
   python manage.py makemigrations
   python manage.py migrate
 
 
- # Create Superuser
+  Create Superuser
 
   python manage.py createsuperuser
 
 
- # Run the Server
+  Run the Server
 
   python manage.py runserver
 
 
- # Visit:
+  Visit:
 
   Main site: http://127.0.0.1:8000/
 
