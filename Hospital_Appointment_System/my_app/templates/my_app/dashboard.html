@@ -9,7 +9,7 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <span>Welcome, {{ user.username }}!</span>
+        <span>Welcome, {{ user.username }}</span>
         <div>
             <a href="{% url 'appointment_create' %}" class="btn btn-add">Add Appointment</a>
             <a href="{% url 'doctor_list' %}" class="btn btn-doctors">Doctors</a>
@@ -17,11 +17,12 @@
             <form id="logout-form" method="post" action="{% url 'logout' %}" style="display:inline;">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-logout">Logout</button>
+                
             </form>
         </div>
     </div>
-
-    <p>Number of appointments: {{ appointments|length }}</p>
+    
+    <p>  Number of appointments: {{ appointments|length }}</p>
 
     {% if appointments %}
         <table>
@@ -44,7 +45,7 @@
             {% endfor %}
         </table>
     {% else %}
-        <p>No appointments yet.</p>
+        <p>  No appointments yet.</p>
     {% endif %}
 </body>
 </html>

@@ -49,7 +49,8 @@ class AppointmentCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.patient = self.request.user
         return super().form_valid(form)
-
+        messages.success(self.request, 'Appointment created successfully! ✅')
+        return response
     def get_success_url(self):
         return reverse('dashboard')
 
