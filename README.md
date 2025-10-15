@@ -1,18 +1,19 @@
-🏥 Hospital Appointment Management System
+# 🏥 Hospital Appointment Management System
 
-Project Description
+# Project Description
 
 This is a web-based Hospital Appointment Management System built using Django. The system allows patients to register, log in, and schedule appointments with doctors. Doctors can manage their own appointments, while the admin oversees the entire system.
 
 The system is designed to simplify appointment booking, reduce administrative workload, and provide an organized view of upcoming appointments. Future improvements include email notifications and doctor-specific dashboards.
 
-Getting Started
+# Getting Started
 
 To explore the Hospital Appointment App:
 
+# ERD
 
 
-Installation & Setup
+# Installation & Setup
 
 Clone the Repository
 
@@ -23,9 +24,9 @@ cd Capstone-Project
 Create & Activate Virtual Environment
 
 python -m venv venv
-# Windows:
+#Windows:
 venv\Scripts\activate
-# Mac/Linux:
+#Mac/Linux:
 source venv/bin/activate
 
 
@@ -71,24 +72,15 @@ Run the Server
 python manage.py runserver
 
 
-Visit:
+# Visit:
 
 Main site: http://127.0.0.1:8000/
 
 Admin panel: http://127.0.0.1:8000/admin/
 
-ERD (Data Model)
 
-Description:
-
-Patient: Can register, login, and manage appointments.
-
-Doctor: Can view and manage their appointments.
-
-Admin: Full CRUD control over patients, doctors, and appointments.
-
-User Stories
-Patient
+# User Stories
+-Patient
 
 Can register and log in to the system.
 
@@ -97,7 +89,7 @@ Can view available doctors and schedule appointments.
 Can view, edit, or cancel their own appointments.
 
 
-Admin
+-Admin
 
 Can manage doctors, patients, and appointments.
 
@@ -105,7 +97,7 @@ Can view all system data via the Django Admin Panel.
 
 Has full CRUD control over all entities.
 
-Key Features
+# Key Features
 
 ✅ Patient registration and login
 
@@ -119,14 +111,15 @@ Key Features
 
 ✅ PostgreSQL database integration
 
-Challenges & Solutions
+# Challenges & Solutions
 
-Displaying appointments in chronological order	Used order_by('appointment_datetime') in DashboardView
-Keeping user-specific appointments only	Filtered appointments by patient=self.request.user in the views
-Future Improvements
+-Displaying appointments in chronological order	Used order_by('appointment_datetime') in DashboardView
+-Keeping user-specific appointments only	Filtered appointments by patient=self.request.user in the views
 
-Allow doctors to have their own login and manage their schedules.
+# Future Improvements
 
-Add email notifications for upcoming appointments.
+-Allow doctors to have their own login and manage their schedules.
 
-Enhance dashboard UX with interactive calendar view.
+-Add email notifications for upcoming appointments.
+
+-Enhance dashboard UX with interactive calendar view.
